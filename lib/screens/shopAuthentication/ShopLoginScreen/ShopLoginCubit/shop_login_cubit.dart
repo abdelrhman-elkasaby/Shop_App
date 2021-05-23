@@ -58,6 +58,7 @@ class ShopLoginCubit extends Cubit<ShopLoginStates> {
     if(loginModel.status==true){
       Utils().alert().showAlertMessage(title: loginModel.message,isSuccess: true);
       CacheHelper.saveData(key: 'token', value: loginModel.data.token);
+      token=loginModel.data.token;
       Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>HomePageScreen()));
       emit(ShopLoginLoginSuccessState());
     }else if(loginModel.status==false){
