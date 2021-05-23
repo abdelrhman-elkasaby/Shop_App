@@ -79,7 +79,7 @@ class _ProductsScreenState extends State<ProductsScreen> {
             shrinkWrap: true,
             crossAxisSpacing: 1,
             mainAxisSpacing: 1,
-            childAspectRatio: 1.0/1.51,
+            childAspectRatio: 1.0/1.8,
             crossAxisCount: 2,
             children:List.generate(homeModel.data.products.length, (index) => productsGridViewBuilder(homeModel, index)),
           ),
@@ -120,10 +120,10 @@ class _ProductsScreenState extends State<ProductsScreen> {
                 const SizedBox(height: 5,),
                 Row(
                   children: [
-                    Text('${model.data.products[index].price} EGP',style: TextStyle(color: Colors.blue,fontSize: 12),),
-                    SizedBox(width: 5,),
+                    Text('${model.data.products[index].price} ',style: TextStyle(color: Colors.blue,fontSize: 11),),
+                    SizedBox(width: 2,),
                     if(model.data.products[index].discount!=0)
-                      Text('${model.data.products[index].oldPrice} EGP',style: TextStyle(color: Colors.grey,decoration: TextDecoration.lineThrough,fontSize: 11),),
+                      Text('${model.data.products[index].oldPrice} ',overflow: TextOverflow.ellipsis,style: TextStyle(color: Colors.grey,decoration: TextDecoration.lineThrough,fontSize: 9),),
                     Spacer(),
                     IconButton(
                         icon: CircleAvatar(

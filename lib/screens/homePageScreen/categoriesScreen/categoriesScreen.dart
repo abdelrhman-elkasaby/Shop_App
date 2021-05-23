@@ -23,7 +23,7 @@ class _CategoriesScreenState extends State<CategoriesScreen> {
 
   Widget buildCategoryItem(DataListBean model) {
     return Padding(
-      padding: const EdgeInsets.all(20.0),
+      padding: const EdgeInsets.all(10.0),
       child: Row(
         children: [
           Image(
@@ -34,7 +34,7 @@ class _CategoriesScreenState extends State<CategoriesScreen> {
           ),
           const SizedBox(width: 20,),
           Text(model.name,
-            style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),),
+            style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),overflow: TextOverflow.ellipsis,),
           Spacer(),
           Icon(Icons.arrow_forward_ios),
         ],
